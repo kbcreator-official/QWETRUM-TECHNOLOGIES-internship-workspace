@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCI | Global Country Insights</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">Global Analytics Tracker</h1>
+      <p class="app-subtitle">Real-time demographic insights fetched via REST Countries API</p>
+      
+      <div class="search-wrapper">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchBar" placeholder="Search countries by name..." autocomplete="off">
+      </div>
+    </header>
+
+    <div id="loadingSpinner" class="spinner-container">
+      <div class="custom-spinner"></div>
+      <p>Fetching demographic data...</p>
+    </div>
+
+    <div id="errorMessage" class="error-container hidden">
+      <i class="fas fa-exclamation-triangle error-icon"></i>
+      <h3>Oops! Something went wrong</h3>
+      <p>Unable to fetch data from the API. Please check your internet connection and try again.</p>
+      <button id="retryBtn" class="btn-retry">Try Again</button>
+    </div>
+
+    <main id="countriesGrid" class="countries-grid"></main>
+  </div>
+  </div> <div id="countryModal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn">&times;</button>
+      <div id="modalDetails"></div>
+    </div>
+  </div>
+
+</body>
+</html>>

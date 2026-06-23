@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modern Gadgets Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav>
+
+            <div class="logo">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">Home</a></li>
+                <li><a href="#" class="nav-link">Products</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search products">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <i class="fa-regular fa-user profile"></i>
+
+            </div>
+
+        </nav>
+
+        <section class="hero">
+
+            <div class="left">
+
+                <span class="tag">NEW COLLECTION</span>
+
+                <h1>
+                    Modern Gadgets <br>
+                    Store
+                </h1>
+
+                <p>
+                    Discover premium gadgets designed to make your daily life
+                    smarter and more enjoyable. Explore stylish technology
+                    with modern design and powerful performance.
+                </p>
+
+                <div class="counter">
+
+                    <button onclick="decrease()">-</button>
+
+                    <span id="count">1</span>
+
+                    <button onclick="increase()">+</button>
+
+                </div>
+
+                <button class="buy-btn">
+                    Buy Now
+                </button>
+
+            </div>
+
+            <div class="right">
+
+                <div class="circle" id="productBg"></div>
+
+                <img
+                    src="airpods.jpg"
+                    alt="Product"
+                    class="pods"
+                    id="mainProduct"
+                >
+
+                <div class="card top-card">
+                    Minimalistic Design
+                </div>
+
+                <div class="card bottom-card">
+                    Super Comfortable
+                </div>
+
+                <div class="thumbs">
+
+                    <img
+                        src="airpods.jpg"
+                        alt="AirPods"
+                        class="thumb active-thumb"
+                    >
+
+                    <img
+                        src="headphones.webp"
+                        alt="Headphones"
+                        class="thumb"
+                    >
+
+                    <img
+                        src="phone.png"
+                        alt="Phone"
+                        class="thumb"
+                    >
+
+                    <img
+                        src="watch.png"
+                        alt="Watch"
+                        class="thumb"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>

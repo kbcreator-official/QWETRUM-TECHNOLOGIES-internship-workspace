@@ -1,0 +1,5 @@
+I used Bootstrap to revamp and improve my landing page for this project. Because many components, including buttons, cards, forms, modals,
+and responsive layouts, were pre-existing, the framework accelerated development. With less bespoke code, a mobile-friendly design was made
+possible by utilizing Bootstrap's grid framework. Bootstrap simplified responsiveness and cut down on development time when compared to basic CSS. 
+However, some more style was needed to modify Bootstrap components to fit a distinctive look. All things considered, Bootstrap increased productivity, 
+offered uniformity throughout the user experience, and made it simpler to create a polished, responsive web application while keeping the code neat and orderly.

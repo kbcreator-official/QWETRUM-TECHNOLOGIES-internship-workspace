@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apna College | Interactive Quiz Assessment</title>
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="quiz-container">
+    <header class="quiz-header">
+      <div class="brand"><span>Apna College</span></div>
+      <div class="timer-box">
+        <i class="far fa-clock"></i>
+        <span id="timerText">30s</span>
+      </div>
+    </header>
+
+    <div class="progress-wrapper">
+      <div class="progress-info">
+        <span id="questionNum">Question 1 of 10</span>
+        <span id="scoreTracker">Score: 0</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div id="progressBarFill" class="progress-bar-fill"></div>
+      </div>
+    </div>
+
+    <main id="quizMain">
+      <div class="question-card">
+        <h2 id="questionText">Loading assessment question...</h2>
+        <div id="optionsContainer" class="options-grid">
+          </div>
+      </div>
+      
+      <div class="controls-footer">
+        <button id="nextBtn" class="btn-next hidden">Next Question <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </main>
+
+    <div id="resultsScreen" class="results-card hidden">
+      <div class="status-icon-box" id="resultIcon"></div>
+      <h2 id="resultHeading">Assessment Complete</h2>
+      <p class="score-summary">You scored <span id="finalScore">0</span> out of 10</p>
+      
+      <div class="percentage-badge">
+        <span id="finalPercentage">0%</span>
+      </div>
+      
+      <p id="resultMessage" class="result-msg">Processing data analytics...</p>
+      
+      <button id="restartBtn" class="btn-restart"><i class="fas fa-redo"></i> Restart Quiz</button>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

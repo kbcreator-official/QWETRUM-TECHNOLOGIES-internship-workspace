@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Framework | Advanced Multi-Step Portal Registration</title>
+  <link rel="stylesheet" href="form.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="portal-wrapper">
+    <div class="form-wizard-card">
+      <header class="wizard-header">
+        <h2>Framework | Advanced Multi-Step Portal Registration</h2>
+        <p>Initialize credential synchronization architecture setup pipeline</p>
+      </header>
+
+      <div class="steps-progress-indicator">
+        <div class="step-node active" id="node1"><span>1</span><p>Personal</p></div>
+        <div class="step-connector" id="conn1"></div>
+        <div class="step-node" id="node2"><span>2</span><p>Account</p></div>
+        <div class="step-connector" id="conn2"></div>
+        <div class="step-node" id="node3"><span>3</span><p>Confirm</p></div>
+      </div>
+
+      <form id="multiStepForm" novalidate>
+        
+        <div class="form-step-section" id="step1">
+          <div class="input-block">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Enter name standard alpha characters">
+            <span class="error-log" id="nameError"></span>
+          </div>
+          <div class="input-block">
+            <label for="userAge">Age</label>
+            <input type="number" id="userAge" placeholder="Target registration age limits">
+            <span class="error-log" id="ageError"></span>
+          </div>
+          <div class="input-block">
+            <label for="phoneNum">Phone Number Format</label>
+            <input type="text" id="phoneNum" placeholder="03XXXXXXXXX (11 Digits)">
+            <span class="error-log" id="phoneError"></span>
+          </div>
+          <div class="actions-wrapper flex-end">
+            <button type="button" class="btn-wizard target-next" onclick="navigateStep(1, 2)">Continue <i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <div class="form-step-section hidden" id="step2">
+          <div class="input-block">
+            <label for="userEmail">Secure Email Address</label>
+            <input type="email" id="userEmail" placeholder="name@domain.com">
+            <span class="error-log" id="emailError"></span>
+          </div>
+          <div class="input-block">
+            <label for="userPassword">System Account Password</label>
+            <input type="password" id="userPassword" placeholder="Minimum 6 complex entities">
+            
+            <div class="strength-bar-container">
+              <div id="strengthMeterFill" class="strength-fill"></div>
+            </div>
+            <span id="strengthLabel" class="strength-label-text">Strength Evaluator: Null</span>
+            
+            <span class="error-log" id="passError"></span>
+          </div>
+          <div class="input-block">
+            <label for="confirmPassword">Verify Password Match</label>
+            <input type="password" id="confirmPassword" placeholder="Re-enter password configuration">
+            <span class="error-log" id="confirmPassError"></span>
+          </div>
+          <div class="actions-wrapper split-space">
+            <button type="button" class="btn-wizard target-prev" onclick="navigateStep(2, 1)"><i class="fas fa-chevron-left"></i> Previous</button>
+            <button type="button" class="btn-wizard target-next" onclick="navigateStep(2, 3)">Continue <i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <div class="form-step-section hidden" id="step3">
+          <div class="summary-card">
+            <h3>Configuration Overview Pipeline Summary</h3>
+            <div class="summary-grid" id="summaryViewContent">
+              </div>
+          </div>
+          <div class="actions-wrapper split-space">
+            <button type="button" class="btn-wizard target-prev" onclick="navigateStep(3, 2)"><i class="fas fa-chevron-left"></i> Previous</button>
+            <button type="submit" class="btn-wizard target-submit">Commit Authorization Records <i class="fas fa-save"></i></button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="archive-log-card">
+      <header class="archive-header">
+        <h3>Synchronized Registry Accounts Data</h3>
+        <p>Local state monitoring engine stack records</p>
+      </header>
+      <div class="table-responsive-wrapper">
+        <table class="data-table-element" id="recordsTable">
+          <thead>
+            <tr>
+              <th>Profile Identity Name</th>
+              <th>Age</th>
+              <th>Phone Communication</th>
+              <th>Validated Access Email</th>
+              <th>Operation Panel Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBodyContent">
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="form.js"></script>
+</body>
+</html>

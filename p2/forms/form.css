@@ -1,0 +1,314 @@
+/* ========== RESET BASE SYSTEM ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, 'Segoe UI', sans-serif;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 2.5rem 1rem;
+}
+
+.portal-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ========== CARD BOXING STRUCTURES ========== */
+.form-wizard-card, .archive-log-card {
+  background: #161616;
+  border: 1px solid #222;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.wizard-header, .archive-header {
+  margin-bottom: 2rem;
+}
+
+.wizard-header h2, .archive-header h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 800;
+}
+
+.wizard-header p, .archive-header p {
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 0.2rem;
+}
+
+/* ========== MULTI-STEP FLOW NODES INDICATORS ========== */
+.steps-progress-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-node {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.step-node span {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  background: #252525;
+  border: 2px solid #333;
+  color: #888;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.step-node p {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.step-connector {
+  flex: 1;
+  height: 2px;
+  background: #252525;
+  margin-bottom: 1rem; /* Adjust alignment configuration alignment tracking */
+  transition: all 0.3s;
+}
+
+/* Dynamic Active Transition Indicators Classes mapping markers */
+.step-node.active span {
+  background: #0d0d0d;
+  border-color: #37bfe0;
+  color: #37bfe0;;
+  box-shadow: 0 0 15px rgba(55, 191, 224, 0.3);
+}
+
+.step-node.active p { color: #fff; }
+
+.step-node.complete span {
+  background: #37bfe0;
+  border-color: #37bfe0;
+  color: white;
+}
+
+.step-connector.filled {
+  background: #37bfe0;
+}
+
+/* ========== INPUT FIELDS FORM ELEMENTS ========== */
+.input-block {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-block label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #b0b0b0;
+  letter-spacing: 0.5px;
+}
+
+.input-block input {
+  padding: 1rem 1.2rem;
+  background: #1f1f1f;
+  border: 1px solid #2d2d2d;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.input-block input:focus {
+  border-color: #e63946;
+  box-shadow: 0 0 12px rgba(230, 57, 70, 0.15);
+}
+
+.error-log {
+  font-size: 0.8rem;
+  color: #e74c3c;
+  min-height: 16px;
+  font-weight: 500;
+}
+
+/* ========== PASSWORD STRENGTH COMPLEX SUB-BAR METERS ========== */
+.strength-bar-container {
+  width: 100%;
+  height: 4px;
+  background: #252525;
+  border-radius: 10px;
+  margin-top: 0.3rem;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.strength-label-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+}
+
+/* ========== WIZARD CONTROLS ACTIONS ACCELERATORS BUTTONS ========== */
+.actions-wrapper {
+  display: flex;
+  margin-top: 2.5rem;
+  gap: 1rem;
+}
+
+.actions-wrapper.flex-end { justify-content: flex-end; }
+.actions-wrapper.split-space { justify-content: space-between; }
+
+.btn-wizard {
+  padding: 0.9rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.target-next, .target-submit {
+  background: #37bfe0;
+  color: white;
+  border: none;
+}
+
+.target-next:hover, .target-submit:hover { background: #2a8fc9; }
+
+.target-prev {
+  background: transparent;
+  border: 1px solid #333;
+  color: #aaa;
+}
+
+.target-prev:hover {
+  border-color: #666;
+  color: #fff;
+}
+
+/* ========== CONFIRMATION SUMMARY GRID CARD ========== */
+.summary-card {
+  background: #1f1f1f;
+  border: 1px solid #2d2d2d;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.summary-card h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #2d2d2d;
+  padding-bottom: 0.5rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem 2rem;
+}
+
+.summary-item label {
+  font-size: 0.8rem;
+  color: #666;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary-item p {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-top: 0.1rem;
+}
+
+/* ========== DATA LOG ELEMENTS PERSISTENT ARCHIVE TABLES ========== */
+.table-responsive-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table-element {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.data-table-element th {
+  background: #1f1f1f;
+  color: #fff;
+  font-weight: 600;
+  padding: 1rem;
+  border-bottom: 2px solid #2d2d2d;
+}
+
+.data-table-element td {
+  padding: 1rem;
+  border-bottom: 1px solid #222;
+  color: #b0b0b0;
+}
+
+.data-table-element tbody tr:hover {
+  background: rgba(255,255,255,0.01);
+}
+
+.btn-delete-record {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-delete-record:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.hidden { display: none !important; }
+
+/* ========== FLUID LAYOUT GRID SCALER ========== */
+@media (max-width: 680px) {
+  .form-wizard-card, .archive-log-card { padding: 1.5rem; }
+  .summary-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .steps-progress-indicator { margin-bottom: 2.5rem; }
+  .step-node p { display: none; } /* Hide labels on tight fluid break spaces */
+}
